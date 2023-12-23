@@ -2,7 +2,8 @@
 import ProductCard from '@/components/ProductCard/ProductCard.vue'
 
 defineProps({
-  title: String
+  title: String,
+  products: Array
 })
 </script>
 
@@ -14,7 +15,12 @@ defineProps({
     </h1>
 
     <div class="mt-8 grid grid-cols-4 gap-4">
-      <product-card v-for="i in 6" :key="`product-${i}`" />
+      <product-card
+        v-for="(product, index) in products"
+        :key="`product-${index}`"
+        :pic="product.pic"
+        :title="product.title"
+      />
     </div>
   </div>
 </template>
