@@ -6,7 +6,7 @@ const props = defineProps({
   type: String
 })
 
-const imageDatas = {
+const imageDatas: { [key: string]: string } = {
   [ProductConst.PUDDING_BLACK_SUGAR]: 'BlackSugar.png',
   [ProductConst.PUDDING_CANTALOUPE]: 'Cantaloupe.png',
   [ProductConst.PUDDING_CHOCOLATE]: 'Chocolate.png',
@@ -21,7 +21,7 @@ const imageDatas = {
   [ProductConst.PUDDING_PINEAPPLE]: 'Pineapple.png'
 }
 
-const url = new URL('./images/' + (imageDatas[props.type] || ''), import.meta.url).href
+const url = new URL('./images/' + (imageDatas[props.type || ''] || ''), import.meta.url).href
 </script>
 
 <template>

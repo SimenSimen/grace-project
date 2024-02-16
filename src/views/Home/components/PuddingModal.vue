@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import Modal from '@/components/Modal/Index.vue'
 import ProductFirst from '@/components/Products/ProductFirst.vue'
 import ProductText from '@/components/Products/ProductText.vue'
-import * as ProductConst from '@/components/Products/Contance.ts'
+import * as ProductConst from '@/components/Products/Contance'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 
 const productTypes = ref([

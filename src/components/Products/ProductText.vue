@@ -18,7 +18,7 @@ const props = defineProps({
   type: String
 })
 
-const compopnentDatas = {
+const compopnentDatas: { [key: string]: any } = {
   [ProductConst.PUDDING_BLACK_SUGAR]: BlackSugarText,
   [ProductConst.PUDDING_CANTALOUPE]: CantaloupeText,
   [ProductConst.PUDDING_CHOCOLATE]: ChocolateText,
