@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, defineExpose } from 'vue'
 import Modal from '@/components/Modal/Index.vue'
 import ProductFirst from '@/components/Products/ProductFirst.vue'
 import ProductText from '@/components/Products/ProductText.vue'
@@ -20,16 +20,26 @@ const productTypes = ref([
   ProductConst.PUDDING_PINEAPPLE,
   ProductConst.PUDDING_STRAWBERRY
 ])
+
+const modalRef = ref(null)
+
+function openModal() {
+  modalRef.value.openModal()
+}
+
+defineExpose({
+  openModal
+})
 </script>
 
 <template>
-  <Modal>
+  <Modal ref="modalRef">
     <carousel :autoplay="0">
       <template v-for="value in productTypes" :key="`wraooer-er-${value}`">
         <slide>
           <div class="product-wrapper flex w-full">
-            <div class="image-wrapper flex-1">
-              <ProductFirst :type="value" />
+            <div class="image-wrapper">
+              <ProductFirst class="" :type="value" />
             </div>
 
             <div class="text-wrapper flex-1 p-4 text-left">
@@ -49,7 +59,11 @@ const productTypes = ref([
 </template>
 
 <style scoped>
+.image-wrapper {
+  height: 500px;
+}
 .text-wrapper {
+  min-width: 400px;
   /* display: flex;
   align-items: center;
   justify-content: center; */

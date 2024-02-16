@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { Transition, ref } from 'vue'
-const show = ref(true)
+import { Transition, ref, defineExpose } from 'vue'
+const show = ref(false)
 
 function closeModal() {
   show.value = false
@@ -9,6 +9,11 @@ function closeModal() {
 function openModal() {
   show.value = true
 }
+
+defineExpose({
+  closeModal,
+  openModal
+})
 </script>
 
 <template>

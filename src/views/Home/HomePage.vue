@@ -1,10 +1,18 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import ProductCate from './ProductCate.vue'
 
 import PuddingModal from './components/PuddingModal.vue'
 // import productsForPudding from '@/data/pudding.js'
 
-function openDailog() {}
+const puddingModalRef: any = ref(null)
+
+// onMounted(() => {
+//   console.log('DOM Box1：', puddingModalRef.value)
+// })
+function openDailog() {
+  puddingModalRef.value && puddingModalRef.value.openModal()
+}
 </script>
 
 <template>
@@ -21,7 +29,7 @@ function openDailog() {}
       <img src="@/assets/images/banners/mid-banner/pudding.png" alt="布丁類別圖" />
     </div>
 
-    <pudding-modal ref="pudding-modal"/>
+    <pudding-modal ref="puddingModalRef" />
 
     <product-cate title="鶴岡食品咖啡 - 綜合豆" />
 
