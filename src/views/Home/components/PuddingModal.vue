@@ -21,10 +21,10 @@ const productTypes = ref([
   ProductConst.PUDDING_STRAWBERRY
 ])
 
-const modalRef = ref(null)
+const modalRef: any = ref(null)
 
 function openModal() {
-  modalRef.value.openModal()
+  modalRef.value && modalRef.value.openModal()
 }
 
 defineExpose({
