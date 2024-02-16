@@ -25,7 +25,7 @@ function openDailog() {
 
     <product-cate title="鶴岡食品日式系列 - 布丁粉 / 果凍粉 / 奶酪" />
 
-    <div class="banner-middle mb-12" @click="openDailog">
+    <div class="banner-middle mb-12 cursor-pointer" @click="openDailog">
       <img src="@/assets/images/banners/mid-banner/pudding.png" alt="布丁類別圖" />
     </div>
 

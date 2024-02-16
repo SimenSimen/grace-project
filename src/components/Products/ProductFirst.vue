@@ -7,21 +7,23 @@ const props = defineProps({
 })
 
 const imageDatas: { [key: string]: string } = {
-  [ProductConst.PUDDING_BLACK_SUGAR]: 'BlackSugar.png',
-  [ProductConst.PUDDING_CANTALOUPE]: 'Cantaloupe.png',
-  [ProductConst.PUDDING_CHOCOLATE]: 'Chocolate.png',
-  [ProductConst.PUDDING_COFFEE]: 'Coffee.png',
-  [ProductConst.PUDDING_EGG]: 'Egg.png',
-  [ProductConst.PUDDING_GRAPE]: 'Grape.png',
-  [ProductConst.PUDDING_GREEN_TEA]: 'GreenTea.png',
-  [ProductConst.PUDDING_MONGO]: 'Mongo.png',
-  [ProductConst.PUDDING_PANNA_COTTA]: 'PannaCotta.png',
-  [ProductConst.PUDDING_PEACH]: 'Peach.png',
-  [ProductConst.PUDDING_STRAWBERRY]: 'Strawberry.png',
-  [ProductConst.PUDDING_PINEAPPLE]: 'Pineapple.png'
+  [ProductConst.PUDDING_BLACK_SUGAR]: 'BlackSugar',
+  [ProductConst.PUDDING_CANTALOUPE]: 'Cantaloupe',
+  [ProductConst.PUDDING_CHOCOLATE]: 'Chocolate',
+  [ProductConst.PUDDING_COFFEE]: 'Coffee',
+  [ProductConst.PUDDING_EGG]: 'Egg',
+  [ProductConst.PUDDING_GRAPE]: 'Grape',
+  [ProductConst.PUDDING_GREEN_TEA]: 'GreenTea',
+  [ProductConst.PUDDING_MONGO]: 'Mongo',
+  [ProductConst.PUDDING_PANNA_COTTA]: 'PannaCotta',
+  [ProductConst.PUDDING_PEACH]: 'Peach',
+  [ProductConst.PUDDING_STRAWBERRY]: 'Strawberry',
+  [ProductConst.PUDDING_PINEAPPLE]: 'Pineapple'
 }
 
-const url = new URL('./images/' + (imageDatas[props.type || ''] || ''), import.meta.url).href
+const imagepath = imageDatas[props.type || '']
+const url = new URL(`./images/${imagepath}.png`, import.meta.url).href
+
 </script>
 
 <template>
