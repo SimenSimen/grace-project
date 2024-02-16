@@ -9,19 +9,12 @@ defineProps({
 
 <template>
   <div class="product-cate-area">
-    <h1 class="product-cate-title text-2xl text-primary font-bold flex items-center">
+    <h1 class="pl-4 product-cate-title text-2xl text-primary font-bold flex items-center">
       <span class="bar"></span>
       <span>{{ title }}</span>
     </h1>
 
-    <div class="mt-8 grid grid-cols-4 gap-4">
-      <product-card
-        v-for="(product, index) in products"
-        :key="`product-${index}`"
-        :pic="product.pic"
-        :title="product.title"
-      />
-    </div>
+    <div class="mt-8 grid grid-cols-4 gap-4"></div>
   </div>
 </template>
 
