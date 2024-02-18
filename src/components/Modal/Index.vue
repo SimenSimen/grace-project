@@ -87,10 +87,10 @@ defineExpose({
     z-index: 10
     display: flex
     align-items: center
-    width:100%
+    width:50%
     position: absolute
     top: 10px
-    left: 0
+    right: 0
     padding-right: 10px
 
     &.nopadding

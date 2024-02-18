@@ -1,7 +1,6 @@
 <template>
   <div class="product-desc-type-1">
-    <h1 class="font-bold text-2xl lg:text-4xl text-blue-700">日式鳳梨風味凍</h1>
-    <h2 class="caption text-sm text-gray-500 mb-4">*本產品含有奶製品，不適合其過敏體質者食用</h2>
+    <h1 class="font-bold text-2xl lg:text-4xl text-blue-700 mb-2 lg:mb-4">日式鳳梨風味凍</h1>
 
     <h3 class="font-bold text-lg mb-1 text-blue-700 flex items-center">
       <div class="text-bar mr-1"></div>
