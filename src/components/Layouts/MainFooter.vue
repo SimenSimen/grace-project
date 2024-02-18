@@ -7,16 +7,16 @@ const year = computed(() => {
 </script>
 
 <template>
-  <footer class="main-footer pt-20">
-    <page-container class="pt-8">
+  <footer class="main-footer lg:pt-20">
+    <page-container class="pl-4 pt-4 lg:pl-0 lg:pt-8">
       <!-- <h1 class="mb-16 text-6xl text-center font-bold text-primary">鶴岡家生活館</h1> -->
 
-      <div class="grid grid-cols-4">
-        <div class="grid grid-cols-2 col-start-2 col-span-3">
-          <div class="info-area">
+      <div class="grid grid-cols-1 lg:grid-cols-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:col-start-2 lg:col-span-3">
+          <div class="info-area mb-8 lg:mb-0">
             <h2 class="text-xl text-primary font-bold mb-2">聯絡方式</h2>
 
-            <div class="mb-2">聯絡電話：(04)2532-5467</div>
+            <div class="mb-2">聯絡電話：<a href="tel:04-25325467">(04)2532-5467</a></div>
             <div class="mb-2">E-mail：k0425325467@yahoo.com.tw</div>
             <div class="mb-2 underline">聯絡地址：臺中市潭子區大智街15巷2弄9號</div>
             <!-- <div>營業時間：週一至週五，早上10點至下午5點</div> -->
@@ -38,7 +38,7 @@ const year = computed(() => {
           </div>
         </div>
 
-        <div class="col-start-2 col-span-2 mt-12">
+        <div class="lg:col-start-2 lg:col-span-2 mt-12">
           <div class="social-media-area flex gap-4 justify-center mb-6">
             <a href="#">
               <img class="w-8" src="@/assets/icons/ig-1.svg" alt="instgram" />
@@ -62,8 +62,16 @@ const year = computed(() => {
   </footer>
 </template>
 
-<style lang="sass" scoped>
-.main-footer
-    background-color: #ddd1c4
-    height: 400px
+<style scoped>
+@media screen(lg) {
+  .main-footer {
+    height: 400px;
+  }
+}
+</style>
+<style lang="scss" scoped>
+.main-footer {
+  background-color: #ddd1c4;
+  // @apply p-2;
+}
 </style>
