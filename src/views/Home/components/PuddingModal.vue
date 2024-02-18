@@ -37,7 +37,7 @@ defineExpose({
 <template>
   <Modal ref="modalRef">
     <div class="slide-wrapper">
-      <carousel :autoplay="0">
+      <carousel :autoplay="4000">
         <template v-for="value in productTypes" :key="`wraooer-er-${value}`">
           <slide>
             <div class="product-wrapper lg:flex">

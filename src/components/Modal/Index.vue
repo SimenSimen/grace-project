@@ -3,7 +3,7 @@ import { Transition, ref, defineExpose } from 'vue'
 const props = defineProps({
   value: {
     type: Boolean,
-    default: true
+    default: false
   }
 })
 
