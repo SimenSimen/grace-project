@@ -17,7 +17,7 @@ const year = computed(() => {
             <h2 class="text-xl text-primary font-bold mb-2">聯絡方式</h2>
 
             <div class="mb-2">聯絡電話：(04)2532-5467</div>
-            <div class="mb-2">E-mail：k0425325467</div>
+            <div class="mb-2">E-mail：k0425325467@yahoo.com.tw</div>
             <div class="mb-2 underline">聯絡地址：臺中市潭子區大智街15巷2弄9號</div>
             <!-- <div>營業時間：週一至週五，早上10點至下午5點</div> -->
             <!-- <div>電子郵件：l2n9house@gmail.com</div> -->
