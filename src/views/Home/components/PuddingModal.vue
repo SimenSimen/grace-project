@@ -81,7 +81,7 @@ defineExpose({
             href="javascript:void(0);"
             aria-current="page"
             :class="[
-              'inline-block p-4 px-8',
+              'inline-block p-2 px-4 lg:p-4 lg:px-8',
               currentClass === classValue && 'text-black bg-gray-100 font-bold active'
             ]"
             :style="{
