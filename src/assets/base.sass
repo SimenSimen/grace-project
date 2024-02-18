@@ -2,9 +2,16 @@
 @tailwind components
 @tailwind utilities
 
-.product-label-wrapper 
+body
+    font-family: "Noto Sans TC"
+
+.product-label-wrapper
     min-width: 100px
     display: inline-block
     .product-label
         background: #325bc3
         color: white
+
+@layer components
+    .text-bar
+        @apply w-1 h-4 bg-blue-700 inline-block

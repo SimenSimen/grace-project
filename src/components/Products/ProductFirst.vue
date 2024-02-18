@@ -23,9 +23,12 @@ const imageDatas: { [key: string]: string } = {
 
 const imagepath = imageDatas[props.type || '']
 const url = new URL(`./images/${imagepath}.png`, import.meta.url).href
-
+// const phoneUrl = new URL(`./images/mobiles/${imagepath}.png`, import.meta.url).href
 </script>
 
 <template>
-  <img :src="url" alt="產品圖" />
+  <picture class="product-picture">
+    <!-- <source :srcset="phoneUrl" media="(max-width: 992px)" /> -->
+    <img :src="url" alt="產品圖" />
+  </picture>
 </template>

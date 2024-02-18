@@ -1,22 +1,36 @@
 <template>
-  <p>
-    <b>品名：北海道奶酪</b>
-  </p>
-  <br />
-  <p>
-    成分：奶精(葡萄糖漿、完全氫化棕櫚仁油、乾酪素鈉、檸檬酸鉀、脂肪酸甘油酯、二氧化矽、婀娜多)、糖、全脂奶粉、葡萄糖、鹿角菜膠、關華豆膠、香料
-  </p>
-  <br />
-  <p>
-    使用方法：準備4000c.c的水，加熱煮開後關火，加入1公斤奶酪粉快速攪拌均勻，溶解後請再繼續攪拌2分鐘(奶酪的口感會更好)，即可分杯成型。
-  </p>
+  <div class="product-desc-type-1">
+    <h1 class="font-bold text-2xl lg:text-4xl text-blue-700">北海道奶酪</h1>
+    <h2 class="caption text-sm text-gray-500 mb-4">*本產品含有奶製品，不適合其過敏體質者食用</h2>
 
-  <br />
-  <p>淨重：1公斤±3%</p>
-  <p>原產地：台灣</p>
-  <p>保存期限：二年</p>
-  <p>有效日期：如產品標示</p>
-  <p>
-    <b>*本產品含有奶製品，不適合其過敏體質者食用</b>
-  </p>
+    <h3 class="font-bold text-lg mb-1 text-blue-700 flex items-center">
+      <div class="text-bar mr-1"></div>
+      <span>成分</span>
+    </h3>
+
+    <p class="text-gray-500 mb-2">
+      奶精(葡萄糖漿、完全氫化棕櫚仁油、乾酪素鈉、檸檬酸鉀、脂肪酸甘油酯、二氧化矽、婀娜多)、糖、全脂奶粉、葡萄糖、鹿角菜膠、關華豆膠、香料
+    </p>
+
+    <h3 class="font-bold text-lg mb-1 text-blue-700 flex items-center">
+      <div class="text-bar mr-1"></div>
+      <span>使用方法</span>
+    </h3>
+
+    <p class="text-gray-500 mb-2">
+      準備 <b>4000c.c</b> 的水，加熱煮開後關火，加入
+      <b>1</b> 加入1公斤奶酪粉快速攪拌均勻，溶解後請再繼續攪拌
+      <b>2</b> 分鐘(奶酪的口感會更好)，即可分杯成型。
+    </p>
+
+    <h3 class="font-bold text-lg mb-1 text-blue-700 flex items-center">
+      <div class="text-bar mr-1"></div>
+      <span>其他說明</span>
+    </h3>
+
+    <p class="text-gray-500">淨重：1公斤±3%</p>
+    <p class="text-gray-500">原產地：台灣</p>
+    <p class="text-gray-500">保存期限：二年</p>
+    <p class="text-gray-500">有效日期：如產品標示</p>
+  </div>
 </template>

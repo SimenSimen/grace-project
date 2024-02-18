@@ -1,6 +1,13 @@
 <script lang="ts" setup>
 import { Transition, ref, defineExpose } from 'vue'
-const show = ref(true)
+const props = defineProps({
+  value: {
+    type: Boolean,
+    default: true
+  }
+})
+
+const show = ref(props.value)
 
 function closeModal() {
   show.value = false
@@ -49,21 +56,28 @@ defineExpose({
   height: 100vh
   top: 0
   left: 0
+  z-index: 200
+  display: flex
+  align-items: center
+  justify-content: center
 
   &.modal-wrapper
     background: rgba(0, 0, 0, 0.2)
 
   .modal-body
-    position: absolute
-    top: 0
-    bottom: 0
-    left: 0
-    right: 0
-    width: 80%
-    height: fit-content
-    max-height: 80%
-    overflow: scroll
-    margin: auto
+    position: relative
+    width: fit-content
+    max-height: 90%
+    max-width: 90%
+    // margin: auto
+
+    // width: fit-content
+    // height: fit-content
+    // max-width: 80%
+    // // max-height: 80%
+    // overflow: scroll
+    // scroll-behavior: container
+    // margin: auto
 
   .modal-head
     position: relative
