@@ -34,7 +34,7 @@ defineExpose({
 
 <template>
   <Modal ref="modalRef">
-    <carousel :autoplay="2000">
+    <carousel :autoplay="0">
       <template v-for="value in productTypes" :key="`wraooer-er-${value}`">
         <slide>
           <div class="product-wrapper flex w-full">
@@ -47,6 +47,10 @@ defineExpose({
                 <ProductText :type="value" />
               </div>
             </div>
+          </div>
+
+          <div class="label rounded">
+
           </div>
         </slide>
       </template>

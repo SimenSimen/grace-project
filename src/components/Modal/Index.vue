@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Transition, ref, defineExpose } from 'vue'
-const show = ref(false)
+const show = ref(true)
 
 function closeModal() {
   show.value = false
