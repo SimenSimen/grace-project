@@ -29,6 +29,6 @@ const url = new URL(`./images/${imagepath}.png`, import.meta.url).href
 <template>
   <picture class="product-picture">
     <!-- <source :srcset="phoneUrl" media="(max-width: 992px)" /> -->
-    <img :src="url" alt="產品圖" />
+    <img class="w-full" :src="url" alt="產品圖" />
   </picture>
 </template>

@@ -69,6 +69,9 @@ defineExpose({
     width: fit-content
     max-height: 90%
     max-width: 90%
+    overflow-y: auto
+    overscroll-behavior: container
+    transform: translate3d(0, 0, 0)
     // margin: auto
 
     // width: fit-content

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, defineExpose } from 'vue'
+import { ref } from 'vue'
 import { PhoneIcon } from '@heroicons/vue/24/solid'
 import Modal from '@/components/Modal/Index.vue'
 import ProductFirst from '@/components/Products/ProductFirst.vue'
@@ -7,6 +7,7 @@ import ProductText from '@/components/Products/ProductText.vue'
 import * as ProductConst from '@/components/Products/Contance'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import { INFO_TEL, INFO_LINE_ID } from '@/constance/Infomation'
+import { SCREENS } from '@/TailwindConfig'
 
 const productTypes = ref([
   ProductConst.PUDDING_BLACK_SUGAR,
@@ -25,6 +26,11 @@ const productTypes = ref([
 
 const modalRef: any = ref(null)
 
+const autoplaySetting = ref(0)
+if (window.innerWidth > parseInt(SCREENS.lg)) {
+  autoplaySetting.value = 4000
+}
+
 function openModal() {
   modalRef.value && modalRef.value.openModal()
 }
@@ -37,15 +43,15 @@ defineExpose({
 <template>
   <Modal ref="modalRef">
     <div class="slide-wrapper">
-      <carousel :autoplay="4000">
+      <carousel :autoplay="autoplaySetting" pause-autoplay-on-hover>
         <template v-for="value in productTypes" :key="`wraooer-er-${value}`">
-          <slide>
-            <div class="product-wrapper lg:flex">
+          <slide style="align-items: start">
+            <div class="product-wrapper flex flex-col lg:flex-row h-full">
               <div class="image-wrapper">
                 <ProductFirst class="" :type="value" />
               </div>
 
-              <div class="text-wrapper flex-1 p-4 pt-3 text-left">
+              <div class="text-wrapper flex-1 p-2 lg:p-4 pt-3 text-left">
                 <ProductText :type="value" />
 
                 <br /><br />
@@ -85,19 +91,41 @@ defineExpose({
 
 <style scoped>
 .product-wrapper {
-  max-height: 500px;
-  overflow-y: auto;
+  /* max-height: 500px; */
 }
+
 .image-wrapper {
   /* height: 500px; */
 }
+
 .text-wrapper {
+  position: relative;
+}
+
+@media screen(lg) {
+  .image-wrapper {
+    max-width: 500px;
+  }
+  .text-wrapper {
+    min-height: 100%;
+    padding-right: 50px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .product-wrapper {
+    max-height: 500px;
+  }
+}
+
+/* for pc */
+/* .text-wrapper {
   min-height: 100%;
   padding-right: 50px;
   overflow-y: auto;
   overflow-x: hidden;
   position: relative;
-}
+} */
 
 .text-wrapper .action {
   position: absolute;
