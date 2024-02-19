@@ -153,7 +153,7 @@ defineExpose({
 }
 
 .image-wrapper {
-  /* height: 500px; */
+  width: 500px;
 }
 
 .text-wrapper {
