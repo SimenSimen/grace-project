@@ -1,53 +1,59 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { PhoneIcon } from '@heroicons/vue/24/solid'
+import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import Modal from '@/components/Modal/Index.vue'
 import ProductFirst from '@/components/Products/ProductFirst.vue'
 import ProductText from '@/components/Products/ProductText.vue'
 import * as ProductConst from '@/components/Products/Contance'
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import { INFO_TEL, INFO_LINE_ID } from '@/constance/Infomation'
 import { SCREENS } from '@/TailwindConfig'
 
-const productTypes = ref([])
-
 const productClass = ref([
-  ProductConst.PUDDING_CLASS_PUDDING,
-  ProductConst.PUDDING_CLASS_JELLY,
-  ProductConst.PUDDING_CLASS_PANNA_COTTA
+  ProductConst.COFFEE_CLASS_FORMULA,
+  ProductConst.COFFEE_CLASS_SINGLE,
+  ProductConst.COFFEE_CLASS_VILLA,
+  ProductConst.COFFEE_CLASS_DRIP
 ])
 
 const productClassData = ref<any>({
-  [ProductConst.PUDDING_CLASS_PUDDING]: {
-    displayName: '布丁',
-    bg: '#f2f2f2',
-    tx: '#000000',
+  [ProductConst.COFFEE_CLASS_FORMULA]: {
+    displayName: '配方豆',
+    bg: 'rgb(73, 32, 15)',
+    tx: 'white',
     datas: [
-      ProductConst.PUDDING_CANTALOUPE,
-      ProductConst.PUDDING_CHOCOLATE,
-      ProductConst.PUDDING_EGG,
-      ProductConst.PUDDING_MONGO,
-      ProductConst.PUDDING_STRAWBERRY,
-      ProductConst.PUDDING_PEACH
+      ProductConst.COFFEE_GOLDENLTALY,
+      ProductConst.COFFEE_GOLDENLTALY2,
+      ProductConst.COFFEE_SOUTHLTALY
     ]
   },
-  [ProductConst.PUDDING_CLASS_JELLY]: {
-    displayName: '果凍',
-    bg: '#f2f2f2',
-    tx: '#000000',
+  [ProductConst.COFFEE_CLASS_SINGLE]: {
+    displayName: '單品豆',
+    bg: '#8B523A',
+    tx: 'white',
+    datas: [ProductConst.COFFEE_BRAZIL, ProductConst.COFFEE_MANDHELING, ProductConst.COFFEE_HUEHUE]
+  },
+  [ProductConst.COFFEE_CLASS_VILLA]: {
+    displayName: '莊園豆',
+    bg: '#E05012',
+    tx: 'white',
     datas: [
-      ProductConst.PUDDING_BLACK_SUGAR,
-      ProductConst.PUDDING_COFFEE,
-      ProductConst.PUDDING_GRAPE,
-      ProductConst.PUDDING_GREEN_TEA,
-      ProductConst.PUDDING_PINEAPPLE
+      ProductConst.COFFEE_YIRGACHEFFEG1,
+      ProductConst.COFFEE_WINE,
+      ProductConst.COFFEE_BAHA,
+      ProductConst.COFFEE_BEETHOVEN,
+      ProductConst.COFFEE_CHOPIN,
+      ProductConst.COFFEE_MOZART
     ]
   },
-  [ProductConst.PUDDING_CLASS_PANNA_COTTA]: {
-    displayName: '奶酪',
-    bg: '#f2f2f2',
-    tx: '#000000',
-    datas: [ProductConst.PUDDING_PANNA_COTTA]
+  [ProductConst.COFFEE_CLASS_DRIP]: {
+    displayName: '濾掛',
+    bg: '#362D29',
+    tx: 'white',
+    datas: [
+      ProductConst.COFFEE_CLASSICMANBADRIP, //
+      ProductConst.COFFEE_PRIVATEDRIP
+    ]
   }
 })
 
@@ -56,7 +62,7 @@ const modalRef: any = ref(null)
 const autoplaySetting = ref(0)
 
 if (window.innerWidth > parseInt(SCREENS.lg)) {
-  autoplaySetting.value = 4000
+  autoplaySetting.value = 0
 }
 
 function openModal() {
@@ -73,7 +79,7 @@ defineExpose({
 </script>
 
 <template>
-  <Modal ref="modalRef">
+  <Modal class="coffee-product-modal" ref="modalRef">
     <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500">
       <template v-for="classValue in productClass" :key="`wraooer-er-class-${classValue}`">
         <li class="cursor-pointer" @click="() => clickTab(classValue)">
@@ -82,11 +88,11 @@ defineExpose({
             aria-current="page"
             :class="[
               'inline-block p-2 px-4 lg:p-4 lg:px-8',
-              currentClass === classValue && 'text-black bg-gray-100 font-bold active'
+              currentClass === classValue && 'font-bold active'
             ]"
             :style="{
-              // background: currentClass === classValue && productClassData[classValue].bg,
-              // color: currentClass === classValue && productClassData[classValue].tx
+              background: currentClass === classValue ? productClassData[classValue].bg : undefined,
+              color: currentClass === classValue ? productClassData[classValue].tx : undefined
             }"
           >
             {{ productClassData[classValue].displayName }}
@@ -105,12 +111,12 @@ defineExpose({
             <slide style="align-items: start">
               <div class="product-wrapper flex flex-col lg:flex-row h-full">
                 <div class="image-wrapper">
-                  <ProductFirst class="" :type="value" />
+                  <ProductFirst class="" cate="coffee" :type="value" />
                 </div>
 
-                <div class="text-wrapper flex-1 p-2 lg:p-4 pt-3 text-left">
+                <div class="text-wrapper flex-1 p-2 lg:p-4 pt-3 lg:pt-2 text-left">
                   <div class="relative min-h-full">
-                    <ProductText :type="value" />
+                    <ProductText cate="coffee" :type="value" />
 
                     <br /><br />
 
@@ -155,7 +161,8 @@ defineExpose({
 }
 
 .image-wrapper {
-  /* width: 500px; */
+  /* width: 100%;
+  min-width: 500px */
 }
 
 .text-wrapper {

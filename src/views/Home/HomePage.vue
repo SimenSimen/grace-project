@@ -3,15 +3,21 @@ import { ref } from 'vue'
 import ProductCate from './ProductCate.vue'
 
 import PuddingModal from './components/PuddingModal.vue'
+import CoffeeModal from './components/CoffeeModal.vue'
 // import productsForPudding from '@/data/pudding.js'
 
 const puddingModalRef: any = ref(null)
+const coffeeModalRef: any = ref(null)
 
 // onMounted(() => {
 //   console.log('DOM Box1：', puddingModalRef.value)
 // })
 function openDailog() {
   puddingModalRef.value && puddingModalRef.value.openModal()
+}
+
+function openCoffeeDailog() {
+  coffeeModalRef.value && coffeeModalRef.value.openModal()
 }
 </script>
 
@@ -31,9 +37,11 @@ function openDailog() {
 
     <!-- <product-cate title="鶴岡食品咖啡 - 綜合豆" /> -->
 
-    <div class="banner-middle">
+    <div class="banner-middle cursor-pointer" @click="openCoffeeDailog">
       <img src="@/assets/images/banners/mid-banner/coffee.png" alt="咖啡類別圖" />
     </div>
+
+    <coffee-modal ref="coffeeModalRef" />
 
     <!-- <product-cate title="鶴岡洗護 - 洗護用品" /> -->
 

@@ -87,7 +87,7 @@ defineExpose({
     z-index: 10
     display: flex
     align-items: center
-    width:50%
+    width: fit-content
     position: absolute
     top: 10px
     right: 0

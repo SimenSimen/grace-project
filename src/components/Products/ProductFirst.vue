@@ -3,7 +3,8 @@ import { defineProps } from 'vue'
 import * as ProductConst from './Contance'
 
 const props = defineProps({
-  type: String
+  type: String,
+  cate: String
 })
 
 const imageDatas: { [key: string]: string } = {
@@ -18,16 +19,37 @@ const imageDatas: { [key: string]: string } = {
   [ProductConst.PUDDING_PANNA_COTTA]: 'PannaCotta',
   [ProductConst.PUDDING_PEACH]: 'Peach',
   [ProductConst.PUDDING_STRAWBERRY]: 'Strawberry',
-  [ProductConst.PUDDING_PINEAPPLE]: 'Pineapple'
+  [ProductConst.PUDDING_PINEAPPLE]: 'Pineapple',
+
+  // coffee
+  [ProductConst.COFFEE_BAHA]: 'Baha',
+  [ProductConst.COFFEE_BEETHOVEN]: 'Beethoven',
+  [ProductConst.COFFEE_BRAZIL]: 'Brazil',
+  [ProductConst.COFFEE_CHOPIN]: 'Chopin',
+  [ProductConst.COFFEE_CLASSICMANBADRIP]: 'ClassicManbaDrip',
+  [ProductConst.COFFEE_GOLDENLTALY]: 'GoldenItaly',
+  [ProductConst.COFFEE_GOLDENLTALY2]: 'GoldenItaly2',
+  [ProductConst.COFFEE_HUEHUE]: 'HueHue',
+  [ProductConst.COFFEE_MANDHELING]: 'Mandheling',
+  [ProductConst.COFFEE_MOZART]: 'Mozart',
+  [ProductConst.COFFEE_PRIVATEDRIP]: 'PrivateDrip',
+  [ProductConst.COFFEE_SOUTHLTALY]: 'SouthItaly',
+  [ProductConst.COFFEE_WINE]: 'Wine',
+  [ProductConst.COFFEE_YIRGACHEFFEG1]: 'YirgacheffeG1'
 }
 
 const imagepath = imageDatas[props.type || '']
-const url = new URL(`./images/${imagepath}.png`, import.meta.url).href
+let url = ''
+
+if (props.cate === 'coffee') {
+  url = new URL(`./coffee-images/${imagepath}.png`, import.meta.url).href
+} else {
+  url = new URL(`./images/${imagepath}.png`, import.meta.url).href
+}
 // too 模糊
 // const webpUrl = new URL(`./images/webp/${imagepath}.webp`, import.meta.url).href
 // const phoneUrl = new URL(`./images/mobiles/${imagepath}.png`, import.meta.url).href
 // console.log(phoneUrl,`./images/webp/${imagepath}.png`)
-
 </script>
 
 <template>
