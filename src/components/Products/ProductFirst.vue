@@ -23,11 +23,16 @@ const imageDatas: { [key: string]: string } = {
 
 const imagepath = imageDatas[props.type || '']
 const url = new URL(`./images/${imagepath}.png`, import.meta.url).href
+// too 模糊
+// const webpUrl = new URL(`./images/webp/${imagepath}.webp`, import.meta.url).href
 // const phoneUrl = new URL(`./images/mobiles/${imagepath}.png`, import.meta.url).href
+// console.log(phoneUrl,`./images/webp/${imagepath}.png`)
+
 </script>
 
 <template>
   <picture class="product-picture">
+    <!-- <source :srcset="webpUrl" type="image/webp" /> -->
     <!-- <source :srcset="phoneUrl" media="(max-width: 992px)" /> -->
     <img class="w-full" :src="url" alt="產品圖" />
   </picture>

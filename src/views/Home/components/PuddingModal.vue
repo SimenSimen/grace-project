@@ -17,7 +17,7 @@ const productClass = ref([
   ProductConst.PUDDING_CLASS_PANNA_COTTA
 ])
 
-const productClassData = ref({
+const productClassData = ref<any>({
   [ProductConst.PUDDING_CLASS_PUDDING]: {
     displayName: '布丁',
     bg: '#f2f2f2',
