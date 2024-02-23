@@ -7,9 +7,15 @@ const year = computed(() => {
 </script>
 
 <template>
-  <footer class="main-footer lg:pt-20">
+  <footer class="main-footer">
     <page-container class="pl-4 pt-4 lg:pl-0 lg:pt-8">
       <!-- <h1 class="mb-16 text-6xl text-center font-bold text-primary">鶴岡家生活館</h1> -->
+      <div class="text-center pb-8 pt-6 lg:pb-12">
+        <h1 class="text-3xl font-bold text-yellow-900" style="letter-spacing: 5px">
+          鶴岡家有限公司
+        </h1>
+        <h2 class="text-md text-center text-gray-500">TSURUOKAKYO CO .,LTD</h2>
+      </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:col-start-2 lg:col-span-3">
@@ -53,8 +59,8 @@ const year = computed(() => {
             </a>
           </div>
 
-          <div class="copyright text-center">
-            <p class="text-lg">&copy; {{ year }} 鶴岡家有限公司 版權所有</p>
+          <div class="copyright text-center mb-4">
+            <p class="text-sm">&copy; {{ year }} 鶴岡家有限公司 版權所有</p>
           </div>
         </div>
       </div>
@@ -65,7 +71,7 @@ const year = computed(() => {
 <style scoped>
 @media screen(lg) {
   .main-footer {
-    height: 400px;
+    min-height: 400px;
   }
 }
 </style>
