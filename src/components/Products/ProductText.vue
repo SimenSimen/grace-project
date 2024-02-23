@@ -90,7 +90,7 @@ const compopnentShampooDatas: { [key: string]: any } = {
   [ProductConst.SHAMPOO_SKIN]: SkinText
 }
 
-let componentDy = null
+let componentDy: any = null
 
 if (props.cate === 'coffee') {
   componentDy = compopnentCoffeeDatas[props.type || '']
