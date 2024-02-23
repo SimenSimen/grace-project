@@ -80,7 +80,7 @@ defineExpose({
 
 <template>
   <Modal class="coffee-product-modal" ref="modalRef">
-    <ul class="flex flex-wrap  font-medium text-center text-gray-500">
+    <ul class="flex flex-wrap font-medium text-center text-gray-500">
       <template v-for="classValue in productClass" :key="`wraooer-er-class-${classValue}`">
         <li class="cursor-pointer" @click="() => clickTab(classValue)">
           <a
@@ -109,7 +109,7 @@ defineExpose({
             :key="`wraooer-er-${value}`"
           >
             <slide style="align-items: start">
-              <div class="product-wrapper flex flex-col lg:flex-row h-full">
+              <div class="content-wrapper flex flex-col lg:flex-row h-full">
                 <div class="image-wrapper">
                   <ProductFirst class="" cate="coffee" :type="value" />
                 </div>
@@ -147,7 +147,9 @@ defineExpose({
           </template>
 
           <template #addons>
-            <navigation />
+            <div class="navigation-wrapper">
+              <navigation />
+            </div>
           </template>
         </carousel>
       </div>
@@ -156,20 +158,33 @@ defineExpose({
 </template>
 
 <style scoped>
-.product-wrapper {
-  /* max-height: 500px; */
+.coffee-product-modal :deep(.modal-body) {
+  overflow: hidden;
+}
+.navigation-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+}
+:deep(.navigation-wrapper button) {
+  background-color: bisque;
+  border-radius: 50%;
 }
 
-.image-wrapper {
-  /* width: 100%;
-  min-width: 500px */
+.content-wrapper {
+  max-height: 600px;
+  overflow-y: auto;
 }
-
 .text-wrapper {
   position: relative;
 }
 
 @media screen(lg) {
+  .content-wrapper {
+    max-height: unset;
+    height: 500px;
+  }
   .image-wrapper {
     max-width: 500px;
   }

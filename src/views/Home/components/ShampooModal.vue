@@ -41,34 +41,36 @@ defineExpose({
       <carousel :autoplay="autoplaySetting" pause-autoplay-on-hover>
         <template v-for="(value, key) in productData" :key="`wraooer-er-${key}`">
           <slide style="align-items: start">
-            <div class="product-wrapper flex flex-col lg:flex-row h-full">
-              <div class="image-wrapper">
-                <ProductFirst class="" cate="shampoo" :type="key" />
-              </div>
+            <div class="content-wrapper">
+              <div class="product-wrapper flex flex-col lg:flex-row h-full">
+                <div class="image-wrapper">
+                  <ProductFirst class="" cate="shampoo" :type="key" />
+                </div>
 
-              <div class="text-wrapper flex-1 p-2 lg:p-4 pt-3 lg:pt-2 text-left">
-                <div class="relative min-h-full">
-                  <ProductText cate="shampoo" :type="key" />
+                <div class="text-wrapper flex-1 p-2 lg:p-4 pt-3 lg:pt-2 text-left">
+                  <div class="relative min-h-full">
+                    <ProductText cate="shampoo" :type="key" />
 
-                  <br /><br />
+                    <br /><br />
 
-                  <div class="action flex">
-                    <a
-                      class="w-8 h-8 rounded-full outline outline-1 text-blue-500 outline-blue-500 flex items-center justify-center mr-3"
-                      :href="`tel:${INFO_TEL}`"
-                    >
-                      <PhoneIcon class="h-4 w-4 text-blue-500" />
-                    </a>
+                    <div class="action flex">
+                      <a
+                        class="w-8 h-8 rounded-full outline outline-1 text-blue-500 outline-blue-500 flex items-center justify-center mr-3"
+                        :href="`tel:${INFO_TEL}`"
+                      >
+                        <PhoneIcon class="h-4 w-4 text-blue-500" />
+                      </a>
 
-                    <a
-                      class="w-8 h-8 text-green-500 outline-green-500 flex items-center justify-center"
-                      :href="`https://line.me/R/ti/p/${INFO_LINE_ID}`"
-                    >
-                      <img class="w-8" src="@/assets/icons/line-1.svg" alt="line" />
-                    </a>
-                    <!-- <button class="w-full rounded text-white" style="background: #06c755">
+                      <a
+                        class="w-8 h-8 text-green-500 outline-green-500 flex items-center justify-center"
+                        :href="`https://line.me/R/ti/p/${INFO_LINE_ID}`"
+                      >
+                        <img class="w-8" src="@/assets/icons/line-1.svg" alt="line" />
+                      </a>
+                      <!-- <button class="w-full rounded text-white" style="background: #06c755">
                   LINE @
                 </button> -->
+                    </div>
                   </div>
                 </div>
               </div>
@@ -79,7 +81,9 @@ defineExpose({
         </template>
 
         <template #addons>
-          <navigation />
+          <div class="navigation-wrapper">
+            <navigation />
+          </div>
         </template>
       </carousel>
     </div>
@@ -87,20 +91,30 @@ defineExpose({
 </template>
 
 <style scoped>
-.product-wrapper {
-  /* max-height: 500px; */
+.navigation-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+}
+:deep(.navigation-wrapper button) {
+  background-color: bisque;
+  border-radius: 50%;
 }
 
-.image-wrapper {
-  /* width: 100%;
-  min-width: 500px */
+.content-wrapper {
+  max-height: 600px;
+  overflow-y: auto;
 }
-
 .text-wrapper {
   position: relative;
 }
 
 @media screen(lg) {
+  .content-wrapper {
+    max-height: unset;
+  }
+
   .image-wrapper {
     max-width: 500px;
   }
@@ -129,9 +143,5 @@ defineExpose({
   position: absolute;
   left: 0px;
   bottom: 5px;
-}
-
-.slide-wrapper {
-  max-width: 1050px;
 }
 </style>

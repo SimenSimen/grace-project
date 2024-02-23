@@ -73,15 +73,15 @@ defineExpose({
 </script>
 
 <template>
-  <Modal ref="modalRef">
-    <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500">
+  <Modal class="pudding-product-modal" ref="modalRef">
+    <ul class="flex flex-wrap font-medium text-center text-gray-500">
       <template v-for="classValue in productClass" :key="`wraooer-er-class-${classValue}`">
         <li class="cursor-pointer" @click="() => clickTab(classValue)">
           <a
             href="javascript:void(0);"
             aria-current="page"
             :class="[
-              'inline-block p-2 px-4 lg:p-4 lg:px-8',
+              'inline-block text-lg lg:text-sm py-1 px-3 lg:p-4 lg:px-8',
               currentClass === classValue && 'text-black bg-gray-100 font-bold active'
             ]"
             :style="{
@@ -103,7 +103,7 @@ defineExpose({
             :key="`wraooer-er-${value}`"
           >
             <slide style="align-items: start">
-              <div class="product-wrapper flex flex-col lg:flex-row h-full">
+              <div class="content-wrapper flex flex-col lg:flex-row h-full">
                 <div class="image-wrapper">
                   <ProductFirst class="" :type="value" />
                 </div>
@@ -141,7 +141,9 @@ defineExpose({
           </template>
 
           <template #addons>
-            <navigation />
+            <div class="navigation-wrapper">
+              <navigation />
+            </div>
           </template>
         </carousel>
       </div>
@@ -150,12 +152,23 @@ defineExpose({
 </template>
 
 <style scoped>
-.product-wrapper {
-  /* max-height: 500px; */
+.pudding-product-modal :deep(.modal-body) {
+  overflow: hidden;
+}
+.navigation-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+}
+:deep(.navigation-wrapper button) {
+  background-color: bisque;
+  border-radius: 50%;
 }
 
-.image-wrapper {
-  /* width: 500px; */
+.content-wrapper {
+  max-height: 600px;
+  overflow-y: auto;
 }
 
 .text-wrapper {
@@ -163,6 +176,10 @@ defineExpose({
 }
 
 @media screen(lg) {
+  .content-wrapper {
+    max-height: unset;
+    height: 500px;
+  }
   .image-wrapper {
     max-width: 500px;
   }
