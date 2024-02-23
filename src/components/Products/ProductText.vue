@@ -30,6 +30,16 @@ import SouthItalyText from './coffee-txt/SouthItaly.vue'
 import WineText from './coffee-txt/Wine.vue'
 import YirgacheffeG1Text from './coffee-txt/YirgacheffeG1.vue'
 
+//
+
+import ShampooBodyText from './shampoo-txt/Body.vue'
+import HairEssenceText from './shampoo-txt/HairEssence.vue'
+import HairProtectText from './shampoo-txt/HairProtect.vue'
+import HeadRepairText from './shampoo-txt/HeadRepair.vue'
+import HeadSakuraText from './shampoo-txt/HeadSakura.vue'
+import ShampooText from './shampoo-txt/Shampoo.vue'
+import SkinText from './shampoo-txt/Skin.vue'
+
 const props = defineProps({
   type: String,
   cate: String
@@ -69,12 +79,23 @@ const compopnentCoffeeDatas: { [key: string]: any } = {
   [ProductConst.COFFEE_YIRGACHEFFEG1]: YirgacheffeG1Text
 }
 
-let componentDy = null
+// shampoo
+const compopnentShampooDatas: { [key: string]: any } = {
+  [ProductConst.SHAMPOO_BODY]: ShampooBodyText,
+  [ProductConst.SHAMPOO_HAIR_ESSENCE]: HairEssenceText,
+  [ProductConst.SHAMPOO_HAIR_PROTECT]: HairProtectText,
+  [ProductConst.SHAMPOO_HEAD_REPAIR]: HeadRepairText,
+  [ProductConst.SHAMPOO_HEAD_SAKURA]: HeadSakuraText,
+  [ProductConst.SHAMPOO_SHAMPOO]: ShampooText,
+  [ProductConst.SHAMPOO_SKIN]: SkinText
+}
 
-console.log(props.type, props.cate, compopnentCoffeeDatas[props.type || ''])
+let componentDy = null
 
 if (props.cate === 'coffee') {
   componentDy = compopnentCoffeeDatas[props.type || '']
+} else if (props.cate === 'shampoo') {
+  componentDy = compopnentShampooDatas[props.type || '']
 } else {
   componentDy = compopnentDatas[props.type || '']
 }

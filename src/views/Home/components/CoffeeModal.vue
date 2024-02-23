@@ -62,7 +62,7 @@ const modalRef: any = ref(null)
 const autoplaySetting = ref(0)
 
 if (window.innerWidth > parseInt(SCREENS.lg)) {
-  autoplaySetting.value = 0
+  autoplaySetting.value = 4000
 }
 
 function openModal() {

@@ -35,7 +35,15 @@ const imageDatas: { [key: string]: string } = {
   [ProductConst.COFFEE_PRIVATEDRIP]: 'PrivateDrip',
   [ProductConst.COFFEE_SOUTHLTALY]: 'SouthItaly',
   [ProductConst.COFFEE_WINE]: 'Wine',
-  [ProductConst.COFFEE_YIRGACHEFFEG1]: 'YirgacheffeG1'
+  [ProductConst.COFFEE_YIRGACHEFFEG1]: 'YirgacheffeG1',
+
+  [ProductConst.SHAMPOO_BODY]: 'Body',
+  [ProductConst.SHAMPOO_HAIR_ESSENCE]: 'HairEssence',
+  [ProductConst.SHAMPOO_HAIR_PROTECT]: 'HairProtect',
+  [ProductConst.SHAMPOO_HEAD_REPAIR]: 'HeadRepair',
+  [ProductConst.SHAMPOO_HEAD_SAKURA]: 'HeadSakura',
+  [ProductConst.SHAMPOO_SHAMPOO]: 'Shampoo',
+  [ProductConst.SHAMPOO_SKIN]: 'Skin'
 }
 
 const imagepath = imageDatas[props.type || '']
@@ -43,6 +51,8 @@ let url = ''
 
 if (props.cate === 'coffee') {
   url = new URL(`./coffee-images/${imagepath}.png`, import.meta.url).href
+} else if (props.cate === 'shampoo') {
+  url = new URL(`./shampoo-images/${imagepath}.jpg`, import.meta.url).href
 } else {
   url = new URL(`./images/${imagepath}.png`, import.meta.url).href
 }

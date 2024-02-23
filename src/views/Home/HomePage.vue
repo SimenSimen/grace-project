@@ -4,10 +4,12 @@ import ProductCate from './ProductCate.vue'
 
 import PuddingModal from './components/PuddingModal.vue'
 import CoffeeModal from './components/CoffeeModal.vue'
+import ShampooModal from './components/ShampooModal.vue'
 // import productsForPudding from '@/data/pudding.js'
 
 const puddingModalRef: any = ref(null)
 const coffeeModalRef: any = ref(null)
+const shampooModalRef: any = ref(null)
 
 // onMounted(() => {
 //   console.log('DOM Box1：', puddingModalRef.value)
@@ -18,6 +20,10 @@ function openDailog() {
 
 function openCoffeeDailog() {
   coffeeModalRef.value && coffeeModalRef.value.openModal()
+}
+
+function openShampooDialog() {
+  shampooModalRef.value && shampooModalRef.value.openModal()
 }
 </script>
 
@@ -45,10 +51,13 @@ function openCoffeeDailog() {
 
     <!-- <product-cate title="鶴岡洗護 - 洗護用品" /> -->
 
-    <div class="banner-middle">
+    <div class="banner-middle cursor-pointer" @click="openShampooDialog">
       <img src="@/assets/images/banners/mid-banner/asdo.png" alt="洗護用品類別圖" />
     </div>
-    <br /><br /><br /><br />
+
+    <shampoo-modal ref="shampooModalRef" />
+
+    <!-- <br /><br /><br /><br /> -->
 
     <!-- <modal class="coffee-modal" />
     <modal class="asdo-modal" /> -->

@@ -12,6 +12,13 @@
 
     <h3 class="font-bold text-lg mb-1 text-blue-700 flex items-center">
       <div class="text-bar mr-1"></div>
+      <span>產地</span>
+    </h3>
+
+    <p class="text-gray-500">中南美洲、非洲、印尼</p>
+
+    <h3 class="font-bold text-lg mb-1 text-blue-700 flex items-center">
+      <div class="text-bar mr-1"></div>
       <span>焙度</span>
     </h3>
 
@@ -31,7 +38,6 @@
 
     <!-- <p class="text-gray-500">成分：100%新鮮咖啡豆</p> -->
     <p class="text-gray-500">規格：454g±2g</p>
-    <p class="text-gray-500">原產地：中南美洲、非洲、印尼</p>
     <p class="text-gray-500">保存期限：未拆封一年</p>
     <p class="text-gray-500">製造日期：如產品標示</p>
   </div>

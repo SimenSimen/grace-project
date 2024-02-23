@@ -12,6 +12,13 @@
 
     <h3 class="font-bold text-lg mb-1 text-blue-700 flex items-center">
       <div class="text-bar mr-1"></div>
+      <span>產地</span>
+    </h3>
+
+    <p class="text-gray-500">中南美洲、非洲</p>
+
+    <h3 class="font-bold text-lg mb-1 text-blue-700 flex items-center">
+      <div class="text-bar mr-1"></div>
       <span>焙度</span>
     </h3>
 
@@ -29,8 +36,7 @@
       <span>內容說明</span>
     </h3>
 
-    <p class="text-gray-500">規格：10g±2g</p>
-    <p class="text-gray-500">原產地：中南美洲、非洲</p>
+    <p class="text-gray-500">規格：10g±2g</p>    
     <p class="text-gray-500">保存期限：未拆封一年</p>
     <p class="text-gray-500">製造日期：如產品標示</p>
     <h2 class="text-red-500 mt-2">*最低訂購量：100包為單位</h2>
