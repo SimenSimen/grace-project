@@ -20,7 +20,7 @@ const productClass = ref([
 const productClassData = ref<any>({
   [ProductConst.PUDDING_CLASS_PUDDING]: {
     displayName: '布丁',
-    bg: '#f2f2f2',
+    bg: '#defea2',
     tx: '#000000',
     datas: [
       ProductConst.PUDDING_CANTALOUPE,
@@ -33,8 +33,8 @@ const productClassData = ref<any>({
   },
   [ProductConst.PUDDING_CLASS_JELLY]: {
     displayName: '果凍',
-    bg: '#f2f2f2',
-    tx: '#000000',
+    bg: '#813a19',
+    tx: 'white',
     datas: [
       ProductConst.PUDDING_BLACK_SUGAR,
       ProductConst.PUDDING_COFFEE,
@@ -85,8 +85,8 @@ defineExpose({
               currentClass === classValue && 'text-black bg-gray-100 font-bold active'
             ]"
             :style="{
-              // background: currentClass === classValue && productClassData[classValue].bg,
-              // color: currentClass === classValue && productClassData[classValue].tx
+              background: currentClass === classValue ? productClassData[classValue].bg : undefined,
+              color: currentClass === classValue ? productClassData[classValue].tx : undefined
             }"
           >
             {{ productClassData[classValue].displayName }}
