@@ -14,7 +14,7 @@ const year = computed(() => {
         <h1 class="text-3xl font-bold text-yellow-900" style="letter-spacing: 5px">
           鶴岡家有限公司
         </h1>
-        <h2 class="text-md text-center text-gray-500">TSURUOKAKYO CO .,LTD</h2>
+        <h2 class="text-md text-center text-gray-500">TSURUOKAKYO CO ., LTD.</h2>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-4">

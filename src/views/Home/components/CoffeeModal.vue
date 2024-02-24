@@ -1,13 +1,14 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { PhoneIcon } from '@heroicons/vue/24/solid'
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import Modal from '@/components/Modal/Index.vue'
 import ProductFirst from '@/components/Products/ProductFirst.vue'
 import ProductText from '@/components/Products/ProductText.vue'
 import * as ProductConst from '@/components/Products/Contance'
 import { INFO_TEL, INFO_LINE_ID } from '@/constance/Infomation'
 import { SCREENS } from '@/TailwindConfig'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Navigation } from 'swiper/modules'
 
 const productClass = ref([
   ProductConst.COFFEE_CLASS_FORMULA,
@@ -103,12 +104,15 @@ defineExpose({
 
     <template v-for="classValue in productClass" :key="`wraooer-er-class-slide-${classValue}`">
       <div v-if="classValue === currentClass" class="slide-wrapper">
-        <carousel :autoplay="autoplaySetting" pause-autoplay-on-hover>
+        <!-- :touch-drag="false" -->
+        <swiper :modules="[Navigation]" navigation>
+          <!-- <carousel :autoplay="autoplaySetting" pause-autoplay-on-hover> -->
           <template
             v-for="value in productClassData[classValue].datas"
             :key="`wraooer-er-${value}`"
           >
-            <slide style="align-items: start">
+            <swiper-slide>
+              <!-- <slide style="align-items: start"> -->
               <div class="content-wrapper flex flex-col lg:flex-row h-full">
                 <div class="image-wrapper">
                   <ProductFirst class="" cate="coffee" :type="value" />
@@ -143,15 +147,12 @@ defineExpose({
               </div>
 
               <!-- <div class="label rounded"></div> -->
-            </slide>
+              <!-- </slide> -->
+            </swiper-slide>
           </template>
 
-          <template #addons>
-            <div class="navigation-wrapper">
-              <navigation />
-            </div>
-          </template>
-        </carousel>
+          <!-- </carousel> -->
+        </swiper>
       </div>
     </template>
   </Modal>
@@ -170,6 +171,26 @@ defineExpose({
 :deep(.navigation-wrapper button) {
   background-color: bisque;
   border-radius: 50%;
+}
+
+:deep(.swiper-button-prev),
+:deep(.swiper-button-next) {
+  background-color: bisque;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+}
+:deep(.swiper-button-prev::after),
+:deep(.swiper-button-next::after) {
+  font-size: 16px;
+  color: black;
+}
+
+:deep(.swiper-button-prev::after) {
+  transform: translateX(-2px);
+}
+:deep(.swiper-button-next::after) {
+  transform: translateX(2px);
 }
 
 .content-wrapper {
@@ -193,10 +214,6 @@ defineExpose({
     padding-right: 50px;
     overflow-y: auto;
     overflow-x: hidden;
-  }
-
-  .product-wrapper {
-    max-height: 500px;
   }
 }
 

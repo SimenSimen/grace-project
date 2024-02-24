@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import ProductCate from './ProductCate.vue'
 
 import PuddingModal from './components/PuddingModal.vue'
 import CoffeeModal from './components/CoffeeModal.vue'
 import ShampooModal from './components/ShampooModal.vue'
-// import productsForPudding from '@/data/pudding.js'
 
 const puddingModalRef: any = ref(null)
 const coffeeModalRef: any = ref(null)

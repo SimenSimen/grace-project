@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Transition, ref, defineExpose } from 'vue'
+import { Transition, ref, defineExpose, watch } from 'vue'
 const props = defineProps({
   value: {
     type: Boolean,
@@ -16,6 +16,19 @@ function closeModal() {
 function openModal() {
   show.value = true
 }
+
+watch(show, (newValue) => {
+  // handle the body scrolling
+  if (newValue) {
+    document.body.style.top = `-${window.scrollY}px`
+    document.body.style.position = 'fixed'
+  } else {
+    const scrollY = document.body.style.top
+    document.body.style.position = ''
+    document.body.style.top = ''
+    window.scrollTo(0, parseInt(scrollY || '0') * -1)
+  }
+})
 
 defineExpose({
   closeModal,
