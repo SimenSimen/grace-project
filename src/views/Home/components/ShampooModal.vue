@@ -157,4 +157,8 @@ defineExpose({
   left: 0px;
   bottom: 5px;
 }
+
+.slide-wrapper {
+  max-width: 1050px;
+}
 </style>

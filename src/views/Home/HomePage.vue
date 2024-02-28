@@ -4,7 +4,6 @@ import { ref } from 'vue'
 import PuddingModal from './components/PuddingModal.vue'
 import CoffeeModal from './components/CoffeeModal.vue'
 import ShampooModal from './components/ShampooModal.vue'
-import { CursorArrowRaysIcon } from '@heroicons/vue/24/solid'
 
 const puddingModalRef: any = ref(null)
 const coffeeModalRef: any = ref(null)
@@ -29,21 +28,27 @@ function openShampooDialog() {
 <template>
   <main>
     <div class="banner">
-      <img class="w-full" src="@/assets/images/banners/banner-1.png" alt="" />
+      <picture>
+        <img class="w-full" src="@/assets/images/banners/banner-1.png" alt="" />
+      </picture>
     </div>
 
     <!-- <product-cate title="鶴岡食品日式系列 - 布丁粉 / 果凍粉 / 奶酪" /> -->
 
     <div class="banner-middle cursor-pointer" @click="openDailog">
-      <img src="@/assets/images/banners/mid-banner/pudding.png" alt="布丁類別圖" />
-
-      <button
-        type="button"
-        class="info-button rounded-lg py-1 px-2 text-sm lg:text-xl lg:px-4 bg-gray-200 text-gray-700 hover:bg-gray-400 hover:text-black"
-      >
-        <span>瞭解更多</span>
-        <CursorArrowRaysIcon class="icon w-4 h-4 lg:w-6 lg:h-6" />
-      </button>
+      <picture>
+        <source
+          srcset="@/assets/images/banners/mid-banner/pudding_m.webp"
+          type="image/webp"
+          media="(max-width: 992px)"
+        />
+        <source
+          srcset="@/assets/images/banners/mid-banner/pudding_m.png"
+          media="(max-width: 992px)"
+        />
+        <source srcset="@/assets/images/banners/mid-banner/pudding.webp" type="image/webp" />
+        <img src="@/assets/images/banners/mid-banner/pudding.png" alt="布丁類別圖" />
+      </picture>
     </div>
 
     <pudding-modal ref="puddingModalRef" />
@@ -51,15 +56,19 @@ function openShampooDialog() {
     <!-- <product-cate title="鶴岡食品咖啡 - 綜合豆" /> -->
 
     <div class="banner-middle cursor-pointer" @click="openCoffeeDailog">
-      <img src="@/assets/images/banners/mid-banner/coffee.png" alt="咖啡類別圖" />
-
-      <button
-        type="button"
-        class="info-button rounded-lg py-1 px-2 text-sm lg:text-xl lg:px-4 bg-gray-200 text-gray-700 hover:bg-gray-400 hover:text-black"
-      >
-        <span>瞭解更多</span>
-        <CursorArrowRaysIcon class="icon w-4 h-4 lg:w-6 lg:h-6" />
-      </button>
+      <picture>
+        <source
+          srcset="@/assets/images/banners/mid-banner/coffee_m.webp"
+          type="image/webp"
+          media="(max-width: 992px)"
+        />
+        <source
+          srcset="@/assets/images/banners/mid-banner/coffee_m.png"
+          media="(max-width: 992px)"
+        />
+        <source srcset="@/assets/images/banners/mid-banner/coffee.webp" type="image/webp" />
+        <img src="@/assets/images/banners/mid-banner/coffee.png" alt="布丁類別圖" />
+      </picture>
     </div>
 
     <coffee-modal ref="coffeeModalRef" />
@@ -67,15 +76,16 @@ function openShampooDialog() {
     <!-- <product-cate title="鶴岡洗護 - 洗護用品" /> -->
 
     <div class="banner-middle cursor-pointer" @click="openShampooDialog">
-      <img src="@/assets/images/banners/mid-banner/asdo.png" alt="洗護用品類別圖" />
-
-      <button
-        type="button"
-        class="info-button rounded-lg py-1 px-2 text-sm lg:text-xl lg:px-4 bg-gray-200 text-gray-700 hover:bg-gray-400 hover:text-black"
-      >
-        <span>瞭解更多</span>
-        <CursorArrowRaysIcon class="icon w-4 h-4 lg:w-6 lg:h-6" />
-      </button>
+      <picture>
+        <source
+          srcset="@/assets/images/banners/mid-banner/asdo_m.webp"
+          type="image/webp"
+          media="(max-width: 992px)"
+        />
+        <source srcset="@/assets/images/banners/mid-banner/asdo_m.png" media="(max-width: 992px)" />
+        <source srcset="@/assets/images/banners/mid-banner/asdo.webp" type="image/webp" />
+        <img src="@/assets/images/banners/mid-banner/asdo.png" alt="布丁類別圖" />
+      </picture>
     </div>
 
     <shampoo-modal ref="shampooModalRef" />
@@ -96,7 +106,9 @@ function openShampooDialog() {
 .banner-middle .info-button {
   position: absolute;
   bottom: 15px;
-  left: 15px;
+  right: 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;

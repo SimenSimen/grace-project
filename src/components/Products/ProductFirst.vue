@@ -52,7 +52,7 @@ let url = ''
 if (props.cate === 'coffee') {
   url = new URL(`./coffee-images/${imagepath}.png`, import.meta.url).href
 } else if (props.cate === 'shampoo') {
-  url = new URL(`./shampoo-images/${imagepath}.jpg`, import.meta.url).href
+  url = new URL(`./shampoo-images/${imagepath}.png`, import.meta.url).href
 } else {
   url = new URL(`./images/${imagepath}.png`, import.meta.url).href
 }
