@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
+import { INFO_LINE_ID, INFO_FACEBOOK_URL } from '@/constance/Infomation'
 
 const year = computed(() => {
   return new Date().getFullYear()
@@ -20,7 +21,7 @@ const year = computed(() => {
       <div class="grid grid-cols-1 lg:grid-cols-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:col-start-2 lg:col-span-3">
           <div class="info-area mb-8 lg:mb-0">
-            <h2 class="text-xl text-primary font-bold mb-2">聯絡方式</h2>
+            <h2 class="text-2xl text-primary font-bold mb-2">聯絡方式</h2>
 
             <div class="mb-2">聯絡電話：<a href="tel:04-25325467">(04)2532-5467</a></div>
             <div class="mb-2">E-mail：k0425325467@yahoo.com.tw</div>
@@ -31,14 +32,16 @@ const year = computed(() => {
           </div>
 
           <div>
-            <h2 class="text-xl text-primary font-bold mb-2">更多連結</h2>
-            <div class="mb-2">
-              <a class="underline" href="#">購物須知</a>
+            <h2 class="text-2xl text-primary font-bold mb-2">更多連結</h2>
+            <div class="mb-2 text-xl">
+              <a class="underline" href="javascript:void(0);" @click="$emit('on-more-product')">
+                更多商品
+              </a>
             </div>
-            <div class="mb-2">
+            <div class="mb-2 text-xl">
               <a class="underline" href="#">常見問題</a>
             </div>
-            <div>
+            <div class="text-xl">
               <a class="underline" href="#">異業合作</a>
             </div>
           </div>
@@ -46,15 +49,15 @@ const year = computed(() => {
 
         <div class="lg:col-start-2 lg:col-span-2 mt-12">
           <div class="social-media-area flex gap-4 justify-center mb-6">
-            <a href="#">
+            <a href="javascript:void(0);">
               <img class="w-8" src="@/assets/icons/ig-1.svg" alt="instgram" />
             </a>
 
-            <a href="#">
+            <a :href="INFO_FACEBOOK_URL" target="_blank">
               <img class="w-8" src="@/assets/icons/fb-1.svg" alt="facebook" />
             </a>
 
-            <a href="#">
+            <a :href="`https://line.me/R/ti/p/${INFO_LINE_ID}`" target="_blank">
               <img class="w-8" src="@/assets/icons/line-1.svg" alt="facebook" />
             </a>
           </div>

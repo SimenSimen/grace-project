@@ -4,10 +4,12 @@ import { ref } from 'vue'
 import PuddingModal from './components/PuddingModal.vue'
 import CoffeeModal from './components/CoffeeModal.vue'
 import ShampooModal from './components/ShampooModal.vue'
+import moreProductModal from './components/MoreProduct.vue'
 
 const puddingModalRef: any = ref(null)
 const coffeeModalRef: any = ref(null)
 const shampooModalRef: any = ref(null)
+const moreProductModalRef: any = ref(null)
 
 // onMounted(() => {
 //   console.log('DOM Box1：', puddingModalRef.value)
@@ -22,6 +24,10 @@ function openCoffeeDailog() {
 
 function openShampooDialog() {
   shampooModalRef.value && shampooModalRef.value.openModal()
+}
+
+function openMoreProduct() {
+  moreProductModalRef.value && moreProductModalRef.value.openModal()
 }
 </script>
 
@@ -94,9 +100,11 @@ function openShampooDialog() {
 
     <!-- <modal class="coffee-modal" />
     <modal class="asdo-modal" /> -->
+
+    <more-product-modal ref="moreProductModalRef" />
   </main>
 
-  <main-footer />
+  <main-footer @on-more-product="openMoreProduct" />
 </template>
 
 <style scoped>
