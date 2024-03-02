@@ -73,14 +73,14 @@ defineExpose({
 
 <template>
   <Modal class="pudding-product-modal" ref="modalRef">
-    <ul class="flex flex-wrap font-medium text-center text-gray-500">
+    <ul class="product-modal-tab flex flex-wrap font-medium text-center text-gray-500">
       <template v-for="classValue in productClass" :key="`wraooer-er-class-${classValue}`">
-        <li class="cursor-pointer" @click="() => clickTab(classValue)">
+        <li class="tab-element cursor-pointer" @click="() => clickTab(classValue)">
           <a
             href="javascript:void(0);"
             aria-current="page"
             :class="[
-              'inline-block text-lg lg:text-sm py-1 px-3 lg:p-4 lg:px-8',
+              'link',
               currentClass === classValue && 'text-black bg-gray-100 font-bold active'
             ]"
             :style="{
@@ -107,7 +107,9 @@ defineExpose({
                   <ProductFirst class="" :type="value" />
                 </div>
 
-                <div class="product-modal-text-wrapper text-wrapper flex-1 p-2 lg:p-4 pt-3 text-left">
+                <div
+                  class="product-modal-text-wrapper text-wrapper flex-1 p-2 lg:p-4 pt-3 text-left"
+                >
                   <div class="relative min-h-full">
                     <ProductText :type="value" />
 

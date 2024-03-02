@@ -87,10 +87,7 @@ defineExpose({
           <a
             href="javascript:void(0);"
             aria-current="page"
-            :class="[
-              'inline-block text-lg lg:text-sm py-1 px-3 lg:p-4 lg:px-8',
-              currentClass === classValue && 'font-bold active'
-            ]"
+            :class="['link', currentClass === classValue && 'font-bold active']"
             :style="{
               background: currentClass === classValue ? productClassData[classValue].bg : undefined,
               color: currentClass === classValue ? productClassData[classValue].tx : undefined
