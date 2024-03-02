@@ -35,7 +35,14 @@ function openMoreProduct() {
   <main>
     <div class="banner">
       <picture>
-        <img class="w-full" src="@/assets/images/banners/banner-1.png" alt="" />
+        <source
+          srcset="@/assets/images/banners/banner-1-m.webp"
+          type="image/webp"
+          media="(max-width: 992px)"
+        />
+        <source srcset="@/assets/images/banners/banner-1-m.png" media="(max-width: 992px)" />
+        <source srcset="@/assets/images/banners/banner-1.webp" type="image/webp" />
+        <img class="w-full" src="@/assets/images/banners/banner-1.png" alt="logo圖" />
       </picture>
     </div>
 
