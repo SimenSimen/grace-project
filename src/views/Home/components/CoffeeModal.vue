@@ -118,7 +118,9 @@ defineExpose({
                   <ProductFirst class="" cate="coffee" :type="value" />
                 </div>
 
-                <div class="text-wrapper flex-1 p-2 lg:p-4 pt-3 lg:pt-2 text-left">
+                <div
+                  class="product-modal-text-wrapper text-wrapper flex-1 p-2 lg:p-4 pt-3 lg:pt-2 text-left"
+                >
                   <div class="relative min-h-full">
                     <ProductText cate="coffee" :type="value" />
 
