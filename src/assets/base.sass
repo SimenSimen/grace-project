@@ -20,7 +20,9 @@ body
     background-color: #f9f7e9
 
 @layer components
+    .product-modal-tab
+        @apply flex-nowrap
     .product-modal-tab .tab-element
         @apply text-lg
     .product-modal-tab .tab-element .link
-        @apply inline-block text-lg lg:text-xl py-1 px-3 lg:py-3 lg:px-5
+        @apply inline-block text-lg lg:text-xl py-1 px-3 lg:py-3 lg:px-5 whitespace-nowrap

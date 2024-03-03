@@ -33,11 +33,11 @@ const year = computed(() => {
 
           <div>
             <h2 class="text-2xl text-primary font-bold mb-2">更多連結</h2>
-            <div class="mb-2 text-xl">
+            <!-- <div class="mb-2 text-xl">
               <a class="underline" href="javascript:void(0);" @click="$emit('on-more-product')">
                 更多商品
               </a>
-            </div>
+            </div> -->
             <div class="mb-2 text-xl">
               <a class="underline" href="#">常見問題</a>
             </div>
