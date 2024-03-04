@@ -66,26 +66,6 @@ function openMoreProduct() {
 
     <pudding-modal ref="puddingModalRef" />
 
-    <div class="banner-middle cursor-pointer" @click="openMoreProduct">
-      <picture>
-        <source
-          srcset="@/assets/images/banners/mid-banner/more-m.webp"
-          type="image/webp"
-          media="(max-width: 992px)"
-        />
-        <source srcset="@/assets/images/banners/mid-banner/more-m.png" media="(max-width: 992px)" />
-        <source srcset="@/assets/images/banners/mid-banner/more.webp" type="image/webp" />
-        <img src="@/assets/images/banners/mid-banner/more.png" alt="更多商品" />
-      </picture>
-    </div>
-
-    <!-- <br /><br /><br /><br /> -->
-
-    <!-- <modal class="coffee-modal" />
-    <modal class="asdo-modal" /> -->
-
-    <more-product-modal ref="moreProductModalRef" />
-
     <!-- <product-cate title="鶴岡食品咖啡 - 綜合豆" /> -->
 
     <div class="banner-middle cursor-pointer" @click="openCoffeeDailog">
@@ -105,6 +85,21 @@ function openMoreProduct() {
     </div>
 
     <coffee-modal ref="coffeeModalRef" />
+
+    <div class="banner-middle cursor-pointer" @click="openMoreProduct">
+      <picture>
+        <source
+          srcset="@/assets/images/banners/mid-banner/more-m.webp"
+          type="image/webp"
+          media="(max-width: 992px)"
+        />
+        <source srcset="@/assets/images/banners/mid-banner/more-m.png" media="(max-width: 992px)" />
+        <source srcset="@/assets/images/banners/mid-banner/more.webp" type="image/webp" />
+        <img src="@/assets/images/banners/mid-banner/more.png" alt="更多商品" />
+      </picture>
+    </div>
+
+    <more-product-modal ref="moreProductModalRef" />
 
     <!-- <product-cate title="鶴岡洗護 - 洗護用品" /> -->
 
