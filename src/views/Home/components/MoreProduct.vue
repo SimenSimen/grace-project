@@ -155,9 +155,9 @@ if (window.innerWidth > parseInt(SCREENS.lg)) {
   autoplaySetting.value = 4000
 }
 
-onMounted(() => {
-  openModal()
-})
+// onMounted(() => {
+//   openModal()
+// })
 
 function openModal() {
   modalRef.value && modalRef.value.openModal()
