@@ -81,9 +81,9 @@ defineExpose({
 
 <template>
   <Modal class="coffee-product-modal" ref="modalRef">
-    <ul class="flex flex-wrap font-medium text-center text-gray-500">
+    <ul class="product-modal-tab flex flex-wrap font-medium text-center text-gray-500">
       <template v-for="classValue in productClass" :key="`wraooer-er-class-${classValue}`">
-        <li class="cursor-pointer" @click="() => clickTab(classValue)">
+        <li class="tab-element cursor-pointer" @click="() => clickTab(classValue)">
           <a
             href="javascript:void(0);"
             aria-current="page"
