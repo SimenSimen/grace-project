@@ -1,6 +1,7 @@
 <template>
   <div class="product-desc-type-1">
     <h1 class="font-bold text-2xl lg:text-4xl text-blue-700">艾絲朵甦活柔膚乳</h1>
+    <h3 class="font-bold text-md text-amber-700">建議售價 NT$880</h3>
 
     <div class="text-gray-500 mt-4">
       <h3 class="font-bold text-lg mb-2 text-blue-700 flex items-center">
