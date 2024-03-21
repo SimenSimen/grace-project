@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { PhoneIcon } from '@heroicons/vue/24/solid'
 import Modal from '@/components/Modal/Index.vue'
 import { INFO_TEL, INFO_LINE_ID } from '@/constance/Infomation'
