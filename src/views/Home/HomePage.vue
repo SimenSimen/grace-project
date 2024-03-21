@@ -12,6 +12,8 @@ const coffeeModalRef: any = ref(null)
 const shampooModalRef: any = ref(null)
 const moreProductModalRef: any = ref(null)
 const aboutModalRef: any = ref(null)
+const orderInfoModalRef: any = ref(null)
+const acrossBusinessModalRef: any = ref(null)
 
 // onMounted(() => {
 //   console.log('DOM Box1：', puddingModalRef.value)
@@ -22,6 +24,14 @@ function openDailog() {
 
 function openAboutDailog() {
   aboutModalRef.value && aboutModalRef.value.openModal()
+}
+
+function orderInfoDailog() {
+  orderInfoModalRef.value && orderInfoModalRef.value.openModal()
+}
+
+function acrossBusinessDailog() {
+  acrossBusinessModalRef.value && acrossBusinessModalRef.value.openModal()
 }
 
 function openCoffeeDailog() {
@@ -126,10 +136,10 @@ function openMoreProduct() {
       </picture>
 
       <div class="click-hover">
-        <div class="about" @click="openAboutDailog"></div>
-        <div class="order-info"></div>
-        <div class="recommand" @click="openShampooDialog"></div>
-        <div class="accross-bussiness"></div>
+        <div class="about" @click="openAboutDailog" />
+        <div class="order-info" @click="orderInfoDailog" />
+        <div class="recommand" @click="openShampooDialog" />
+        <div class="accross-bussiness" @click="acrossBusinessDailog" />
       </div>
     </div>
 
@@ -137,7 +147,7 @@ function openMoreProduct() {
     <modal ref="aboutModalRef">
       <div class="about-modal-content p-6 text-gray-700">
         <h1 class="text-2xl mb-4 text-blue-700">
-          <div class="text-bar mr-1" style="height: 1.2rem;"></div>
+          <div class="text-bar mr-1" style="height: 1.2rem"></div>
           <span>關於我們</span>
         </h1>
 
@@ -145,15 +155,80 @@ function openMoreProduct() {
           於2005年創立「鶴岡商行」，擁有18年的食品餐飲經驗，期間做出許多顧客們心中，最幸福的甜點滋味！
         </p>
 
-        <br>
-        
+        <br />
+
         <p>
           在這條路上我們堅持創新，調整腳步，於2023年7月，正式成立「鶴岡家有限公司」，不只有甜品，更提升專業度與多角化經營，開發至咖啡、茶葉等產品，廣受好評。從知名餐廳到在地店家，都有我們的忠實顧客！
         </p>
 
-        <br>
+        <br />
 
         <p>鶴岡家將繼續乘載著這份支持與熱情，做出更優質的商品與更親切的服務，前往幸福滋味之境。</p>
+      </div>
+    </modal>
+
+    <modal ref="orderInfoModalRef">
+      <div class="order-info-content p-6 text-gray-700">
+        <h1 class="text-2xl mb-4 text-blue-700">
+          <div class="text-bar mr-1" style="height: 1.2rem"></div>
+          <span>訂購須知</span>
+        </h1>
+
+        <p class="mb-2">1. 布丁、果凍粉出貨皆以20包/箱為單位，可綜合混搭下單。</p>
+        <p class="mb-2">2. 本公司粉類系列產品皆以投保產品人責任險1000萬元。</p>
+        <p class="mb-2">3. 本公司粉類系列皆通過HACCP、ISO 9001:22000國際品質認證。</p>
+        <p class="mb-2">4. 如需少量包裝可至蝦皮賣場搜尋</p>
+        <p class="mb-2">5. 由新竹物流全台配送，貨款代收(如需轉帳請先告知)。</p>
+        <p class="mb-2">
+          6. 收到商品請第一時間f確認檢查，如有問題請當下拍照留存並連繫我們幫您處理。
+        </p>
+        <p>7. 其餘問題可透過電話、LINE@詢問</p>
+      </div>
+    </modal>
+
+    <modal ref="acrossBusinessModalRef">
+      <div class="across-business-content p-6 text-gray-700">
+        <h1 class="text-2xl mb-4 text-blue-700">
+          <div class="text-bar mr-1" style="height: 1.2rem"></div>
+          <span>異業合作</span>
+        </h1>
+
+        <p class="mb-2">在地溫馨溫暖的咖啡品牌「貳弄九號館」！</p>
+        <p class="mb-2">主要販售「調和咖啡豆」、「頂級莊園豆」等商品</p>
+        <br />
+
+        <p class="mb-2">
+          <img class="w-6 h-6 inline-block" src="./images/earth.svg" alt="earth" />
+          <span class="text-lg font-bold mr-4">官網連結:</span>
+          <a class="text-blue-500" href="https://www.9house.com.tw" target="_blank"
+            >https://www.9house.com.tw</a
+          >
+        </p>
+
+        <br />
+
+        <p class="mb-4">
+          <img class="w-6 h-6 inline-block" src="./images/people-fill.svg" alt="earth" />
+          <span class="text-lg font-bold">社群網站:</span>
+        </p>
+        <p class="mb-2">
+          <img class="w-4 h-4 inline-block" src="@/assets/icons/ig-1.svg" alt="earth" />
+          IG:
+          <a
+            class="ml-2 text-blue-500"
+            href="https://www.instagram.com/l2n9_coffee"
+            target="_blank"
+          >
+            https://www.instagram.com/l2n9_coffee
+          </a>
+        </p>
+        <p>
+          <img class="w-4 h-4 inline-block" src="@/assets/icons/fb-1.svg" alt="earth" />
+          FB:
+          <a class="ml-2 text-blue-500" href="https://www.facebook.com/cafe9house" target="_blank">
+            https://www.facebook.com/cafe9house
+          </a>
+        </p>
       </div>
     </modal>
   </main>
@@ -162,6 +237,14 @@ function openMoreProduct() {
 </template>
 
 <style scoped>
+.across-business-content {
+  max-width: 520px;
+}
+
+.order-info-content {
+  max-width: 520px;
+}
+
 .about-modal-content {
   max-width: 500px;
 }

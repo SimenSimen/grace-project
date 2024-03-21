@@ -4,11 +4,13 @@ import { PhoneIcon } from '@heroicons/vue/24/solid'
 import Modal from '@/components/Modal/Index.vue'
 import { INFO_TEL, INFO_LINE_ID } from '@/constance/Infomation'
 import { SCREENS } from '@/TailwindConfig'
+import Class8Content from './Class8Content.vue'
 
 const productClass = ref([
   'CLASS_1',
   'CLASS_2',
   'CLASS_3',
+  'CLASS_8',
   'CLASS_4',
   'CLASS_5',
   'CLASS_6',
@@ -86,6 +88,16 @@ const productClassData = ref<any>({
         ]
       }
     ]
+  },
+
+  ['CLASS_8']: {
+    displayName: '茶葉',
+    bg: 'rgb(73, 32, 15)',
+    tx: 'white',
+    image: new URL('../images/tea-2.png', import.meta.url).href,
+    imageWeb: new URL('../images/tea-2.webp', import.meta.url).href,
+    type: 'html',
+    component: Class8Content
   },
 
   ['CLASS_4']: {
@@ -257,6 +269,10 @@ defineExpose({
                     </h3>
                   </div>
                 </template>
+              </template>
+
+              <template v-else-if="productClassData[classValue].type === 'html'">
+                <component :is="productClassData[classValue].component"></component>
               </template>
               <br /><br />
 
