@@ -3,9 +3,11 @@ import { ref } from 'vue'
 
 import PuddingModal from './components/PuddingModal.vue'
 import CoffeeModal from './components/CoffeeModal.vue'
-import ShampooModal from './components/ShampooModal.vue'
+// import ShampooModal from './components/ShampooModal.vue'
 import moreProductModal from './components/MoreProduct.vue'
 import Modal from '@/components/Modal/Index.vue'
+import { INFO_TEL } from '@/constance/Infomation'
+import { PhoneIcon } from '@heroicons/vue/24/solid'
 
 const puddingModalRef: any = ref(null)
 const coffeeModalRef: any = ref(null)
@@ -143,7 +145,40 @@ function openMoreProduct() {
       </div>
     </div>
 
-    <shampoo-modal ref="shampooModalRef" />
+    <!-- <shampoo-modal ref="shampooModalRef" /> -->
+    <modal ref="shampooModalRef">
+      <div class="shampoo-modal-content p-6 text-gray-700">
+        <h1 class="text-2xl mb-4 text-blue-700">
+          <div class="text-bar mr-1" style="height: 1.2rem"></div>
+          <span>艾絲朵_甦活系列</span>
+        </h1>
+
+        <br>
+
+        <p class="mb-2">「艾絲朵甦活系列」源自專業沙龍洗護品牌。</p>
+        <p class="mb-2">
+          從「頭皮」清潔與調理到「髮絲」滋潤與修復，給予全面性最貼心的沙龍等級養護，讓您即便在家，也能輕鬆維持美麗秀髮與健康頭皮。
+        </p>
+
+        <br>
+        <p class="my-2">產品網站：</p>
+        <p class="mb-6">
+          <a
+            class="text-blue-500"
+            href="https://www.asdobeauty.com/collections/vital-reset"
+            target="_blank"
+            >https://www.asdobeauty.com/collections/vital-reset
+          </a>
+        </p>
+
+        <a
+          class="w-8 h-8 rounded-full outline outline-1 text-blue-500 outline-blue-500 flex items-center justify-center mr-3"
+          :href="`tel:${INFO_TEL}`"
+        >
+          <PhoneIcon class="h-4 w-4 text-blue-500" />
+        </a>
+      </div>
+    </modal>
     <modal ref="aboutModalRef">
       <div class="about-modal-content p-6 text-gray-700">
         <h1 class="text-2xl mb-4 text-blue-700">
@@ -152,7 +187,7 @@ function openMoreProduct() {
         </h1>
 
         <p>
-          於2005年創立「鶴岡商行」，擁有18年的食品餐飲經驗，期間做出許多顧客們心中，最幸福的甜點滋味！
+          於2005年創立「鶴岡商行」，擁有多年的食品餐飲經驗，期間做出許多顧客們心中，最幸福的甜點滋味！
         </p>
 
         <br />
@@ -180,7 +215,7 @@ function openMoreProduct() {
         <p class="mb-2">4. 如需少量包裝可至蝦皮賣場搜尋</p>
         <p class="mb-2">5. 由新竹物流全台配送，貨款代收(如需轉帳請先告知)。</p>
         <p class="mb-2">
-          6. 收到商品請第一時間f確認檢查，如有問題請當下拍照留存並連繫我們幫您處理。
+          6. 收到商品請第一時間確認檢查，如有問題請當下拍照留存並連繫我們幫您處理。
         </p>
         <p>7. 其餘問題可透過電話、LINE@詢問</p>
       </div>
@@ -237,6 +272,10 @@ function openMoreProduct() {
 </template>
 
 <style scoped>
+.shampoo-modal-content {
+  max-width: 520px;
+}
+
 .across-business-content {
   max-width: 520px;
 }
