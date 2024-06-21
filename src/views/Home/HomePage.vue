@@ -161,13 +161,24 @@ function openMoreProduct() {
         </p>
 
         <br>
+        
         <p class="my-2">產品網站：</p>
+        <p class="my-2">ASDO 頭髮養護系列：</p>
         <p class="mb-6">
           <a
             class="text-blue-500"
-            href="https://www.asdobeauty.com/collections/vital-reset"
+            href="https://asukahair.com.tw/zh/product_cg17855.php"
             target="_blank"
-            >https://www.asdobeauty.com/collections/vital-reset
+            >https://asukahair.com.tw/zh/product_cg17855.php
+          </a>
+        </p>
+        <p class="my-2">ASDO 身體呵護系列：</p>
+        <p class="mb-6">
+          <a
+            class="text-blue-500"
+            href="https://asukahair.com.tw/zh/product_cg17857.php"
+            target="_blank"
+            >https://asukahair.com.tw/zh/product_cg17857.php
           </a>
         </p>
 
@@ -209,8 +220,8 @@ function openMoreProduct() {
           <span>訂購須知</span>
         </h1>
 
-        <p class="mb-2">1. 布丁、果凍粉出貨皆已20包/箱為單位，可綜合混搭訂購。</p>
-        <p class="mb-2">2. 本公司粉類系列產品皆已投保產品人責任險1000萬元。</p>
+        <p class="mb-2">1. 布丁、果凍粉出貨皆以20包/箱為單位，可綜合混搭訂購。</p>
+        <p class="mb-2">2. 本公司粉類系列產品皆己投保產品人責任險1000萬元。</p>
         <p class="mb-2">3. 本公司粉類系列皆通過HACCP、ISO 9001:22000國際品質認證。</p>
         <p class="mb-2">4. 如需少量包裝可至蝦皮賣場搜尋</p>
         <p class="mb-2">5. 由新竹物流全台配送，貨款代收(如需轉帳請先告知)。</p>
