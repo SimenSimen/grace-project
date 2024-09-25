@@ -163,22 +163,13 @@ function openMoreProduct() {
         <br>
         
         <p class="my-2">產品網站：</p>
-        <p class="my-2">ASDO 頭髮養護系列：</p>
+        <p class="my-2">ASDO 頭髮身體養護系列：</p>
         <p class="mb-6">
           <a
             class="text-blue-500"
             href="https://asukahair.com.tw/zh/product_cg17855.php"
             target="_blank"
             >https://asukahair.com.tw/zh/product_cg17855.php
-          </a>
-        </p>
-        <p class="my-2">ASDO 身體呵護系列：</p>
-        <p class="mb-6">
-          <a
-            class="text-blue-500"
-            href="https://asukahair.com.tw/zh/product_cg17857.php"
-            target="_blank"
-            >https://asukahair.com.tw/zh/product_cg17857.php
           </a>
         </p>
 
