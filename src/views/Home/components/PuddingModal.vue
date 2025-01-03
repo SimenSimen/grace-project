@@ -37,7 +37,7 @@ const productClassData = ref<any>({
     datas: [
       ProductConst.PUDDING_BLACK_SUGAR,
       ProductConst.PUDDING_COFFEE,
-      ProductConst.PUDDING_GRAPE,
+      // ProductConst.PUDDING_GRAPE,
       ProductConst.PUDDING_GREEN_TEA,
       ProductConst.PUDDING_PINEAPPLE
     ]
